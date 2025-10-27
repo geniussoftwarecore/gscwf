@@ -208,7 +208,7 @@ export function FeatureSelection({
     { id: 'social', name: lang === 'ar' ? 'وسائل التواصل' : 'Social Media', color: 'from-blue-500 to-cyan-500' },
     { id: 'seo', name: lang === 'ar' ? 'محركات البحث' : 'SEO', color: 'from-green-500 to-emerald-500' },
     { id: 'content', name: lang === 'ar' ? 'المحتوى' : 'Content', color: 'from-purple-500 to-violet-500' },
-    { id: 'advertising', name: lang === 'ar' ? 'الإعلانات' : 'Advertising', color: 'from-orange-500 to-red-500' },
+    { id: 'advertising', name: lang === 'ar' ? 'الإعلانات' : 'Advertising', color: 'from-sky-500 to-blue-600' },
     { id: 'email', name: lang === 'ar' ? 'البريد الإلكتروني' : 'Email', color: 'from-teal-500 to-cyan-500' },
     { id: 'analytics', name: lang === 'ar' ? 'التحليلات' : 'Analytics', color: 'from-indigo-500 to-blue-500' },
     { id: 'influencer', name: lang === 'ar' ? 'المؤثرين' : 'Influencer', color: 'from-pink-500 to-rose-500' },
@@ -244,7 +244,7 @@ export function FeatureSelection({
     >
       {/* Header */}
       <div className="text-center">
-        <Badge variant="outline" className="text-orange-600 border-orange-200 bg-orange-50 dark:text-orange-400 dark:border-orange-800 dark:bg-orange-950/20 mb-4">
+        <Badge variant="outline" className="text-sky-600 border-sky-200 bg-sky-50 dark:text-sky-400 dark:border-sky-800 dark:bg-sky-950/20 mb-4">
           <Sparkles className="w-4 h-4 mr-2" />
           {lang === 'ar' ? 'الخطوة الثانية' : 'Step 2'}
         </Badge>
@@ -263,7 +263,7 @@ export function FeatureSelection({
 
       {/* Pricing Summary */}
       {totalPrice > 0 && (
-        <Alert className="border-orange-200 bg-orange-50 dark:bg-orange-950/20">
+        <Alert className="border-sky-200 bg-sky-50 dark:bg-sky-950/20">
           <DollarSign className="w-4 h-4" />
           <AlertDescription>
             {lang === 'ar' ? 
@@ -301,8 +301,8 @@ export function FeatureSelection({
                     className={cn(
                       "cursor-pointer transition-all duration-300 hover:shadow-lg border-2",
                       selectedFeatures.includes(feature.id)
-                        ? "border-orange-500 bg-orange-50 dark:bg-orange-950/20"
-                        : "border-gray-200 dark:border-gray-700 hover:border-orange-300"
+                        ? "border-sky-500 bg-sky-50 dark:bg-sky-950/20"
+                        : "border-gray-200 dark:border-gray-700 hover:border-sky-300"
                     )}
                     onClick={() => handleFeatureToggle(feature.id)}
                   >
@@ -317,7 +317,7 @@ export function FeatureSelection({
                           
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-2">
-                              <feature.icon className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                              <feature.icon className="w-5 h-5 text-sky-600 dark:text-sky-400" />
                               {feature.isRecommended && (
                                 <Badge variant="secondary" className="text-xs">
                                   {lang === 'ar' ? 'مُوصى' : 'Recommended'}
@@ -349,7 +349,7 @@ export function FeatureSelection({
                           {feature.duration}
                         </div>
                         
-                        <div className="text-lg font-bold text-orange-600 dark:text-orange-400">
+                        <div className="text-lg font-bold text-sky-600 dark:text-sky-400">
                           {formatPrice(feature.price)}
                         </div>
                       </div>
@@ -378,7 +378,7 @@ export function FeatureSelection({
         <Button
           onClick={onNext}
           size="lg"
-          className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 group"
+          className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 group"
           data-testid="button-continue-to-contact"
         >
           {lang === 'ar' ? 'متابعة لمعلومات التواصل' : 'Continue to Contact Info'}

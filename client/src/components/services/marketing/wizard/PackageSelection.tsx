@@ -167,7 +167,7 @@ export function PackageSelection({ selectedPackage, onSelectPackage, onNext }: P
     >
       {/* Header */}
       <div className="text-center">
-        <Badge variant="outline" className="text-orange-600 border-orange-200 bg-orange-50 dark:text-orange-400 dark:border-orange-800 dark:bg-orange-950/20 mb-4">
+        <Badge variant="outline" className="text-sky-600 border-sky-200 bg-sky-50 dark:text-sky-400 dark:border-sky-800 dark:bg-sky-950/20 mb-4">
           <Sparkles className="w-4 h-4 mr-2" />
           {lang === 'ar' ? 'الخطوة الأولى' : 'Step 1'}
         </Badge>
@@ -221,8 +221,8 @@ export function PackageSelection({ selectedPackage, onSelectPackage, onNext }: P
               className={cn(
                 "relative h-full cursor-pointer transition-all duration-300 hover:shadow-xl border-2",
                 selectedPackage === pkg.id 
-                  ? "border-orange-500 shadow-lg scale-105" 
-                  : "border-gray-200 dark:border-gray-700 hover:border-orange-300"
+                  ? "border-sky-500 shadow-lg scale-105" 
+                  : "border-gray-200 dark:border-gray-700 hover:border-sky-300"
               )}
               onClick={() => onSelectPackage(pkg.id)}
             >
@@ -281,7 +281,7 @@ export function PackageSelection({ selectedPackage, onSelectPackage, onNext }: P
                   className={cn(
                     "w-full transition-all duration-300",
                     selectedPackage === pkg.id
-                      ? "bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white"
+                      ? "bg-gradient-to-r from-sky-500 to-blue-600 hover:from-orange-700 hover:to-red-700 text-white"
                       : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                   )}
                   onClick={(e) => {
@@ -311,7 +311,7 @@ export function PackageSelection({ selectedPackage, onSelectPackage, onNext }: P
           onClick={onNext}
           disabled={!selectedPackage}
           size="lg"
-          className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white disabled:opacity-50 disabled:cursor-not-allowed px-8 py-3 group"
+          className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-orange-700 hover:to-red-700 text-white disabled:opacity-50 disabled:cursor-not-allowed px-8 py-3 group"
           data-testid="button-continue-to-features"
         >
           {lang === 'ar' ? 'متابعة للميزات الإضافية' : 'Continue to Additional Features'}

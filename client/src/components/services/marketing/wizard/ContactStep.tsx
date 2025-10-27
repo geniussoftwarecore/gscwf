@@ -193,7 +193,7 @@ export function ContactStep({
     >
       {/* Header */}
       <div className="text-center">
-        <Badge variant="outline" className="text-orange-600 border-orange-200 bg-orange-50 dark:text-orange-400 dark:border-orange-800 dark:bg-orange-950/20 mb-4">
+        <Badge variant="outline" className="text-sky-600 border-sky-200 bg-sky-50 dark:text-sky-400 dark:border-sky-800 dark:bg-sky-950/20 mb-4">
           <Sparkles className="w-4 h-4 mr-2" />
           {lang === 'ar' ? 'الخطوة الثالثة' : 'Step 3'}
         </Badge>
@@ -215,7 +215,7 @@ export function ContactStep({
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <User className="w-5 h-5 text-orange-600" />
+              <User className="w-5 h-5 text-sky-600" />
               {lang === 'ar' ? 'معلومات التواصل' : 'Contact Information'}
             </CardTitle>
           </CardHeader>
@@ -304,7 +304,7 @@ export function ContactStep({
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <MessageSquare className="w-5 h-5 text-orange-600" />
+              <MessageSquare className="w-5 h-5 text-sky-600" />
               {lang === 'ar' ? 'تفاصيل المشروع' : 'Project Details'}
             </CardTitle>
           </CardHeader>
@@ -389,7 +389,7 @@ export function ContactStep({
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Upload className="w-5 h-5 text-orange-600" />
+            <Upload className="w-5 h-5 text-sky-600" />
             {lang === 'ar' ? 'رفع ملفات (اختياري)' : 'File Upload (Optional)'}
           </CardTitle>
         </CardHeader>
@@ -413,7 +413,7 @@ export function ContactStep({
               />
               <label
                 htmlFor="fileUpload"
-                className="inline-flex items-center px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-lg cursor-pointer hover:bg-orange-200 dark:hover:bg-orange-900/50 transition-colors"
+                className="inline-flex items-center px-4 py-2 bg-sky-100 dark:bg-sky-900/30 text-sky-600 dark:text-sky-400 rounded-lg cursor-pointer hover:bg-sky-200 dark:hover:bg-sky-900/50 transition-colors"
               >
                 <Upload className="w-4 h-4 mr-2" />
                 {lang === 'ar' ? 'اختيار ملفات' : 'Choose Files'}
@@ -438,7 +438,7 @@ export function ContactStep({
                 </h4>
                 {attachedFiles.map((file) => (
                   <div key={file.id} className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                    <FileText className="w-5 h-5 text-orange-600" />
+                    <FileText className="w-5 h-5 text-sky-600" />
                     <div className="flex-1">
                       <p className="font-medium text-gray-900 dark:text-white">{file.name}</p>
                       <p className="text-sm text-gray-500">{formatFileSize(file.size)}</p>
@@ -475,7 +475,7 @@ export function ContactStep({
         <Button
           onClick={handleNext}
           size="lg"
-          className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 group"
+          className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 group"
           data-testid="button-continue-to-summary"
         >
           {lang === 'ar' ? 'مراجعة الطلب' : 'Review Request'}

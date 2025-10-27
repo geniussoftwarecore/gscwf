@@ -164,7 +164,7 @@ export function SummaryStep({
     >
       {/* Header */}
       <div className="text-center">
-        <Badge variant="outline" className="text-orange-600 border-orange-200 bg-orange-50 dark:text-orange-400 dark:border-orange-800 dark:bg-orange-950/20 mb-4">
+        <Badge variant="outline" className="text-sky-600 border-sky-200 bg-sky-50 dark:text-sky-400 dark:border-sky-800 dark:bg-sky-950/20 mb-4">
           <Sparkles className="w-4 h-4 mr-2" />
           {lang === 'ar' ? 'الخطوة الأخيرة' : 'Final Step'}
         </Badge>
@@ -191,7 +191,7 @@ export function SummaryStep({
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <User className="w-5 h-5 text-orange-600" />
+                <User className="w-5 h-5 text-sky-600" />
                 {lang === 'ar' ? 'معلومات التواصل' : 'Contact Information'}
               </CardTitle>
             </CardHeader>
@@ -242,21 +242,21 @@ export function SummaryStep({
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Package className="w-5 h-5 text-orange-600" />
+                <Package className="w-5 h-5 text-sky-600" />
                 {lang === 'ar' ? 'الباقة والميزات' : 'Package & Features'}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               {/* Selected Package */}
               {selectedPackageInfo && (
-                <div className="p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
+                <div className="p-4 bg-sky-50 dark:bg-sky-950/20 rounded-lg">
                   <div className="flex items-center gap-2 mb-2">
-                    <Megaphone className="w-4 h-4 text-orange-600" />
-                    <span className="font-semibold text-orange-700 dark:text-orange-400">
+                    <Megaphone className="w-4 h-4 text-sky-600" />
+                    <span className="font-semibold text-sky-700 dark:text-sky-400">
                       {selectedPackageInfo.name}
                     </span>
                   </div>
-                  <p className="text-lg font-bold text-orange-600" data-testid="text-package-price">
+                  <p className="text-lg font-bold text-sky-600" data-testid="text-package-price">
                     {selectedPackageInfo.price}
                   </p>
                 </div>
@@ -274,7 +274,7 @@ export function SummaryStep({
                         <span className="text-gray-700 dark:text-gray-300">
                           {featureDetails[featureId as keyof typeof featureDetails]?.name || featureId}
                         </span>
-                        <span className="font-medium text-orange-600">
+                        <span className="font-medium text-sky-600">
                           {formatPrice(featurePrices[featureId])}
                         </span>
                       </div>
@@ -286,7 +286,7 @@ export function SummaryStep({
                       <Separator className="my-3" />
                       <div className="flex items-center justify-between font-semibold">
                         <span>{lang === 'ar' ? 'إجمالي الميزات الإضافية:' : 'Additional Features Total:'}</span>
-                        <span className="text-orange-600" data-testid="text-features-total">
+                        <span className="text-sky-600" data-testid="text-features-total">
                           {formatPrice(additionalFeaturesTotal)}
                         </span>
                       </div>
@@ -307,7 +307,7 @@ export function SummaryStep({
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <MessageSquare className="w-5 h-5 text-orange-600" />
+                <MessageSquare className="w-5 h-5 text-sky-600" />
                 {lang === 'ar' ? 'تفاصيل المشروع' : 'Project Details'}
               </CardTitle>
             </CardHeader>
@@ -355,7 +355,7 @@ export function SummaryStep({
                   <div className="space-y-1">
                     {attachedFiles.map((file) => (
                       <div key={file.id} className="flex items-center gap-2 text-sm">
-                        <FileText className="w-3 h-3 text-orange-600" />
+                        <FileText className="w-3 h-3 text-sky-600" />
                         <span className="text-gray-700 dark:text-gray-300 truncate">
                           {file.name} ({formatFileSize(file.size)})
                         </span>
@@ -406,7 +406,7 @@ export function SummaryStep({
           onClick={onSubmit}
           size="lg"
           disabled={isSubmitting}
-          className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 group disabled:opacity-50"
+          className="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 group disabled:opacity-50"
           data-testid="button-submit-request"
         >
           {isSubmitting ? (
