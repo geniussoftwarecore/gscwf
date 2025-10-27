@@ -19,34 +19,36 @@ export default function About() {
   const { lang, dir } = useLanguage();
   const isRTL = dir === 'rtl';
   
-  const teamMembers = [
+  const workProcess = [
     {
-      name: "أحمد محمد",
-      role: "المدير التقني",
-      bio: "خبرة +8 سنوات في تطوير التطبيقات والأنظمة",
-      icon: User,
-      skills: ["React", "Node.js", "Python", "AWS"],
+      title: "الاستماع والفهم",
+      description: "نبدأ بفهم عميق لاحتياجاتك وأهدافك، ونستمع لرؤيتك بعناية لضمان تقديم الحل الأمثل",
+      icon: Users,
     },
     {
-      name: "سارة أحمد",
-      role: "مصممة UI/UX",
-      bio: "متخصصة في تصميم تجربة المستخدم وواجهات التطبيقات",
+      title: "التخطيط الاستراتيجي",
+      description: "نضع خطة عمل مفصلة ومدروسة تضمن تحقيق أهدافك ضمن الميزانية والوقت المحددين",
+      icon: Target,
+    },
+    {
+      title: "التصميم الإبداعي",
+      description: "نصمم حلولاً مبتكرة وجذابة تجمع بين الجمالية والوظائف العملية لتجربة مستخدم استثنائية",
       icon: Palette,
-      skills: ["Figma", "Adobe XD", "Sketch", "Prototyping"],
     },
     {
-      name: "محمد علي",
-      role: "مطور تطبيقات محمولة",
-      bio: "خبير في تطوير التطبيقات للأندرويد و iOS",
-      icon: Smartphone,
-      skills: ["React Native", "Flutter", "Swift", "Kotlin"],
+      title: "التطوير التقني",
+      description: "نستخدم أحدث التقنيات والأدوات لتطوير حلول قوية وموثوقة تلبي أعلى معايير الجودة",
+      icon: Zap,
     },
     {
-      name: "فاطمة خالد",
-      role: "أخصائية تسويق رقمي",
-      bio: "خبيرة في استراتيجيات التسويق الرقمي وإدارة وسائل التواصل",
-      icon: TrendingUp,
-      skills: ["Google Ads", "Social Media", "SEO", "Analytics"],
+      title: "الاختبار والجودة",
+      description: "نختبر كل جزء من المشروع بدقة لضمان الأداء الأمثل وخلوه من الأخطاء",
+      icon: Shield,
+    },
+    {
+      title: "التسليم والدعم",
+      description: "نسلم المشروع في الوقت المحدد ونوفر دعماً فنياً مستمراً لضمان نجاح واستمرارية الحل",
+      icon: Heart,
     },
   ];
 
@@ -224,42 +226,35 @@ export default function About() {
         <Container size="lg">
           <AnimatedText className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-6">
-              فريقنا المميز
+              منهجية عملنا
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              مجموعة من الخبراء والمتخصصين الذين يعملون بشغف لتحقيق رؤيتنا
+              نتبع نهجاً احترافياً ومنظماً في كل مشروع لضمان تقديم أفضل النتائج
             </p>
           </AnimatedText>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <AnimatedCard key={index} delay={index * 0.1} className="p-6 text-center" hover={true}>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {workProcess.map((step, index) => (
+              <AnimatedCard key={index} delay={index * 0.1} className="p-8 text-center" hover={true}>
                 <CardContent className="p-0">
                   <motion.div
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                     className="relative mb-6"
                   >
-                    <div className="w-32 h-32 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-primary/40 shadow-lg flex items-center justify-center">
-                      <member.icon className="text-primary" size={48} />
+                    <div className="w-20 h-20 rounded-2xl mx-auto bg-gradient-to-br from-primary/20 to-primary/40 shadow-lg flex items-center justify-center">
+                      <step.icon className="text-primary" size={40} />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md">
+                      {index + 1}
                     </div>
                   </motion.div>
-                  <h3 className="text-xl font-bold text-secondary mb-2">
-                    {member.name}
+                  <h3 className="text-xl font-bold text-secondary mb-3">
+                    {step.title}
                   </h3>
-                  <p className="text-primary font-semibold mb-3">
-                    {member.role}
+                  <p className="text-gray-600 leading-relaxed">
+                    {step.description}
                   </p>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {member.bio}
-                  </p>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {member.skills.map((skill, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-xs">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
                 </CardContent>
               </AnimatedCard>
             ))}
