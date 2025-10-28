@@ -77,24 +77,34 @@ export default function About() {
 
   const values = [
     {
-      icon: Lightbulb,
-      title: "الابتكار",
-      description: "نسعى دائماً لإيجاد حلول مبتكرة تلبي احتياجات العملاء",
+      icon: Heart,
+      title: "العميل أولاً",
+      description: "نضع عملاءنا في صدارة اهتماماتنا، ونعمل بكل تفانٍ لتحقيق رضاهم وتجاوز توقعاتهم في كل مشروع",
     },
     {
-      icon: Users,
-      title: "التعاون",
-      description: "نؤمن بقوة العمل الجماعي وأهمية التعاون مع عملائنا",
+      icon: Shield,
+      title: "الالتزام والمصداقية",
+      description: "نلتزم بوعودنا ونحافظ على أعلى معايير الشفافية والمصداقية في تعاملنا مع جميع عملائنا",
     },
     {
       icon: Target,
-      title: "الجودة",
-      description: "نلتزم بأعلى معايير الجودة في جميع مشاريعنا",
+      title: "التميز في الخدمة",
+      description: "نسعى دائماً لتقديم خدمات استثنائية بجودة عالية، مع الاهتمام بأدق التفاصيل لضمان رضا عملائنا الكامل",
     },
     {
-      icon: Heart,
-      title: "التركيز على العميل",
-      description: "رضا العميل هو أولويتنا القصوى في كل ما نقوم به",
+      icon: Users,
+      title: "الشراكة الحقيقية",
+      description: "نؤمن بأن نجاح عملائنا هو نجاحنا، لذا نعمل كشركاء حقيقيين نرافقهم في كل خطوة لتحقيق أهدافهم",
+    },
+    {
+      icon: Zap,
+      title: "الاستجابة السريعة",
+      description: "نحرص على الرد الفوري على استفسارات عملائنا وتلبية احتياجاتهم بسرعة وكفاءة عالية",
+    },
+    {
+      icon: Lightbulb,
+      title: "الابتكار المستمر",
+      description: "نبتكر حلولاً متطورة ومبدعة تساعد عملاءنا على التفوق والتميز في مجالاتهم",
     },
   ];
 
@@ -273,7 +283,7 @@ export default function About() {
             </p>
           </AnimatedText>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((value, index) => (
               <AnimatedCard key={index} delay={index * 0.1} className="p-6 text-center" hover={true}>
                 <CardContent className="p-0">
