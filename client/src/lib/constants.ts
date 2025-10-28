@@ -98,8 +98,8 @@ export const COMPANY_INFO = {
 };
 
 export const STATS = [
-  { value: '100%', label: 'التزام بالمواعيد', icon: 'fas fa-clock' },
-  { value: '98%', label: 'رضا العملاء', icon: 'fas fa-smile' },
-  { value: '24/7', label: 'دعم فني متواصل', icon: 'fas fa-headset' },
-  { value: '< 2 ساعة', label: 'وقت الاستجابة', icon: 'fas fa-bolt' }
+  { value: '4.9/5', label: 'تقييم العملاء', icon: 'fas fa-star' },
+  { value: '95%', label: 'عملاء دائمون', icon: 'fas fa-user-check' },
+  { value: '< 30 دقيقة', label: 'زمن الرد الأولي', icon: 'fas fa-reply' },
+  { value: '100%', label: 'ضمان الجودة', icon: 'fas fa-shield-check' }
 ];
