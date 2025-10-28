@@ -75,39 +75,6 @@ export default function About() {
     },
   ];
 
-  const values = [
-    {
-      icon: Heart,
-      title: "العميل أولاً",
-      description: "نضع عملاءنا في صدارة اهتماماتنا، ونعمل بكل تفانٍ لتحقيق رضاهم وتجاوز توقعاتهم في كل مشروع",
-    },
-    {
-      icon: Shield,
-      title: "الالتزام والمصداقية",
-      description: "نلتزم بوعودنا ونحافظ على أعلى معايير الشفافية والمصداقية في تعاملنا مع جميع عملائنا",
-    },
-    {
-      icon: Target,
-      title: "التميز في الخدمة",
-      description: "نسعى دائماً لتقديم خدمات استثنائية بجودة عالية، مع الاهتمام بأدق التفاصيل لضمان رضا عملائنا الكامل",
-    },
-    {
-      icon: Users,
-      title: "الشراكة الحقيقية",
-      description: "نؤمن بأن نجاح عملائنا هو نجاحنا، لذا نعمل كشركاء حقيقيين نرافقهم في كل خطوة لتحقيق أهدافهم",
-    },
-    {
-      icon: Zap,
-      title: "الاستجابة السريعة",
-      description: "نحرص على الرد الفوري على استفسارات عملائنا وتلبية احتياجاتهم بسرعة وكفاءة عالية",
-    },
-    {
-      icon: Lightbulb,
-      title: "الابتكار المستمر",
-      description: "نبتكر حلولاً متطورة ومبدعة تساعد عملاءنا على التفوق والتميز في مجالاتهم",
-    },
-  ];
-
   return (
     <>
       <PageHeader 
@@ -264,41 +231,6 @@ export default function About() {
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
                     {step.description}
-                  </p>
-                </CardContent>
-              </AnimatedCard>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      <Section size="xl" background="white">
-        <Container size="lg">
-          <AnimatedText className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-6">
-              قيمنا الأساسية
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              المبادئ التي توجه عملنا وتشكل ثقافتنا المؤسسية
-            </p>
-          </AnimatedText>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <AnimatedCard key={index} delay={index * 0.1} className="p-6 text-center" hover={true}>
-                <CardContent className="p-0">
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-4xl text-primary mb-4"
-                  >
-                    <value.icon size={48} />
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-secondary mb-3">
-                    {value.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {value.description}
                   </p>
                 </CardContent>
               </AnimatedCard>
