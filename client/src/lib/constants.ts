@@ -98,8 +98,8 @@ export const COMPANY_INFO = {
 };
 
 export const STATS = [
-  { value: '5+', label: 'سنوات خبرة', icon: 'fas fa-calendar-alt' },
-  { value: '150+', label: 'مشروع منجز', icon: 'fas fa-project-diagram' },
-  { value: '80+', label: 'عميل راضي', icon: 'fas fa-users' },
-  { value: '24/7', label: 'دعم فني', icon: 'fas fa-headset' }
+  { value: '100%', label: 'التزام بالمواعيد', icon: 'fas fa-clock' },
+  { value: '98%', label: 'رضا العملاء', icon: 'fas fa-smile' },
+  { value: '24/7', label: 'دعم فني متواصل', icon: 'fas fa-headset' },
+  { value: '< 2 ساعة', label: 'وقت الاستجابة', icon: 'fas fa-bolt' }
 ];
