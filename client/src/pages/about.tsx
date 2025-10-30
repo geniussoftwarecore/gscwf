@@ -111,161 +111,90 @@ export default function About() {
               </Link>
             </AnimatedSection>
             <AnimatedSection delay={0.5}>
-              <div className="flex flex-col items-center justify-center space-y-8">
+              <div className="flex flex-col items-center justify-center space-y-6">
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.8, rotateY: -30 }}
-                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
                   whileHover={{ 
-                    scale: 1.08,
-                    rotateY: 5,
-                    rotateZ: 2,
-                    transition: { duration: 0.4, type: "spring", stiffness: 300 }
+                    scale: 1.05,
+                    transition: { duration: 0.3, type: "spring", stiffness: 200 }
                   }}
-                  whileTap={{ scale: 0.95 }}
+                  whileTap={{ scale: 0.98 }}
                   transition={{ 
-                    duration: 0.8,
-                    type: "spring",
-                    bounce: 0.4
+                    duration: 0.6,
+                    type: "spring"
                   }}
-                  className="relative group"
+                  className="relative group cursor-pointer"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-blue-500/20 to-purple-500/20 rounded-full blur-3xl group-hover:blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-110"></div>
-                  
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-full animate-pulse"></div>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-primary/30 to-purple-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-60"
+                    transition={{
+                      duration: 0.4
+                    }}
+                  />
                   
                   <motion.div
-                    animate={{
-                      boxShadow: [
-                        "0 0 20px rgba(59, 130, 246, 0.3)",
-                        "0 0 60px rgba(59, 130, 246, 0.5)",
-                        "0 0 20px rgba(59, 130, 246, 0.3)",
-                      ]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-full p-10 shadow-2xl"
+                    className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-full p-6 shadow-2xl overflow-hidden"
                   >
+                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-purple-500/10"></div>
+                    
                     <img 
                       src={logoGSC} 
                       alt="Genius Software Core Logo" 
-                      className="w-72 h-72 object-contain drop-shadow-2xl"
+                      className="w-48 h-48 object-contain drop-shadow-2xl relative z-10"
                     />
                   </motion.div>
-                  
-                  <motion.div
-                    className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-primary to-blue-600 rounded-full opacity-20 blur-xl"
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0.2, 0.4, 0.2],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  
-                  <motion.div
-                    className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-20 blur-xl"
-                    animate={{
-                      scale: [1, 1.3, 1],
-                      opacity: [0.2, 0.3, 0.2],
-                    }}
-                    transition={{
-                      duration: 2.5,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 0.5
-                    }}
-                  />
                 </motion.div>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                  className="text-center space-y-4 max-w-2xl"
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="text-center space-y-3 max-w-xl"
                 >
                   <motion.h1 
-                    className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent"
-                    animate={{
-                      backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                    }}
-                    transition={{
-                      duration: 5,
-                      repeat: Infinity,
-                      ease: "linear"
-                    }}
-                    style={{
-                      backgroundSize: "200% auto",
-                    }}
+                    className="text-2xl lg:text-3xl font-bold text-secondary"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     جينيس سوفت وير كور
                   </motion.h1>
                   
                   <motion.h2 
-                    className="text-2xl lg:text-3xl font-semibold text-secondary"
+                    className="text-xl lg:text-2xl font-semibold text-primary"
                     whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     Genius Software Core
                   </motion.h2>
 
-                  <div className="relative py-4">
-                    <div className="absolute inset-0 flex items-center">
-                      <div className="w-full border-t-2 border-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
-                    </div>
-                    <div className="relative flex justify-center">
-                      <span className="bg-white px-4">
-                        <motion.div
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                          className="w-3 h-3 rounded-full bg-gradient-to-r from-primary to-purple-600"
-                        />
-                      </span>
-                    </div>
+                  <div className="relative py-3">
+                    <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
                   </div>
 
                   <motion.p 
-                    className="text-xl lg:text-2xl font-bold text-primary leading-relaxed"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 1 }}
+                    className="text-lg lg:text-xl font-bold text-primary leading-relaxed"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     نبتكر الحلول… ونحقق النمو
                   </motion.p>
                   
                   <motion.p 
-                    className="text-lg lg:text-xl text-gray-600 italic font-medium"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 1.2 }}
+                    className="text-base lg:text-lg text-gray-600 italic font-medium"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     We Innovate Solutions… We Drive Growth
                   </motion.p>
 
                   <motion.div
-                    className="flex justify-center gap-2 pt-4"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 1.4 }}
+                    className="flex justify-center gap-2 pt-3"
                   >
                     {[...Array(3)].map((_, i) => (
-                      <motion.div
+                      <div
                         key={i}
-                        className="w-2 h-2 rounded-full bg-primary"
-                        animate={{
-                          scale: [1, 1.5, 1],
-                          opacity: [0.5, 1, 0.5],
-                        }}
-                        transition={{
-                          duration: 1.5,
-                          repeat: Infinity,
-                          delay: i * 0.2,
-                        }}
+                        className="w-2 h-2 rounded-full bg-primary/60"
                       />
                     ))}
                   </motion.div>
