@@ -123,79 +123,97 @@ export const portfolioProjects: PortfolioProject[] = [
       }
     ],
     tech: ['React.js', 'Next.js', 'TypeScript', 'ASP.NET Core', 'C#', 'SQL Server', 'Entity Framework', 'OAuth 2.0', 'JWT'],
-    coverImage: '@assets/Screenshot 2025-10-30 170048_1761835060626.png',
+    coverImage: '@assets/1_1761854863054.webp',
     gallery: [
       {
         id: '1',
-        url: '@assets/Screenshot 2025-10-30 170048_1761835060626.png',
-        alt: 'K9 System Landing Page',
-        altAr: 'الصفحة الرئيسية لنظام K9',
+        url: '@assets/1_1761854863054.webp',
+        alt: 'K9 System Production Dashboard',
+        altAr: 'لوحة تحكم نظام الإنتاج K9',
         type: 'image',
-        caption: 'Professional landing page with key features overview',
-        captionAr: 'صفحة هبوط احترافية مع نظرة عامة على الميزات الرئيسية'
+        caption: 'Real-time production tracking dashboard',
+        captionAr: 'لوحة تحكم تتبع الإنتاج في الوقت الفعلي'
       },
       {
         id: '2',
-        url: '@assets/Screenshot 2025-10-30 170143_1761835060626.png',
+        url: '@assets/2_1761854863054.webp',
+        alt: 'K9 Control Panel',
+        altAr: 'لوحة التحكم الرئيسية K9',
+        type: 'image',
+        caption: 'Comprehensive control panel interface',
+        captionAr: 'واجهة لوحة التحكم الشاملة'
+      },
+      {
+        id: '3',
+        url: '@assets/3_1761854863055.webp',
+        alt: 'K9 Dashboard Overview',
+        altAr: 'نظرة عامة على لوحة تحكم K9',
+        type: 'image',
+        caption: 'Main dashboard with real-time statistics',
+        captionAr: 'لوحة معلومات رئيسية مع إحصائيات في الوقت الفعلي'
+      },
+      {
+        id: '4',
+        url: '@assets/4_1761854863055.webp',
+        alt: 'K9 Production System',
+        altAr: 'نظام الإنتاج K9',
+        type: 'image',
+        caption: 'Advanced production management system',
+        captionAr: 'نظام إدارة الإنتاج المتقدم'
+      },
+      {
+        id: '5',
+        url: '@assets/5_1761854863055.webp',
+        alt: 'K9 Attendance Control Panel',
+        altAr: 'لوحة التحكم بالحضور K9',
+        type: 'image',
+        caption: 'Attendance and shift management board',
+        captionAr: 'لوحة إدارة الحضور والورديات'
+      },
+      {
+        id: '6',
+        url: '@assets/6_1761854863056.webp',
+        alt: 'K9 Advanced Reports Center',
+        altAr: 'مركز التقارير المتقدم K9',
+        type: 'image',
+        caption: 'Comprehensive reporting and analytics center',
+        captionAr: 'مركز شامل للتقارير والتحليلات'
+      },
+      {
+        id: '7',
+        url: '@assets/7_1761854863056.webp',
+        alt: 'K9 Reports Dashboard',
+        altAr: 'لوحة التقارير K9',
+        type: 'image',
+        caption: 'Advanced reporting with PDF/Excel export',
+        captionAr: 'تقارير متقدمة مع إمكانية التصدير بصيغة PDF و Excel'
+      },
+      {
+        id: '8',
+        url: '@assets/8_1761854863056.webp',
+        alt: 'K9 Analytics Center',
+        altAr: 'مركز التحليلات K9',
+        type: 'image',
+        caption: 'Data analytics and insights dashboard',
+        captionAr: 'لوحة تحليل البيانات والرؤى'
+      },
+      {
+        id: '9',
+        url: '@assets/9_1761854863056.webp',
+        alt: 'K9 Control Panel Light Mode',
+        altAr: 'لوحة التحكم K9 (الوضع الفاتح)',
+        type: 'image',
+        caption: 'Control panel with light theme interface',
+        captionAr: 'لوحة التحكم بواجهة فاتحة'
+      },
+      {
+        id: '10',
+        url: '@assets/10_1761854863057.webp',
         alt: 'K9 System Login Interface',
         altAr: 'واجهة تسجيل الدخول لنظام K9',
         type: 'image',
         caption: 'Secure authentication system with role-based access',
         captionAr: 'نظام مصادقة آمن مع وصول قائم على الأدوار'
-      },
-      {
-        id: '3',
-        url: '@assets/Screenshot 2025-10-30 170235_1761835060626.png',
-        alt: 'K9 Dashboard Overview',
-        altAr: 'لوحة تحكم نظام K9',
-        type: 'image',
-        caption: 'Comprehensive dashboard with real-time statistics',
-        captionAr: 'لوحة معلومات شاملة مع إحصائيات في الوقت الفعلي'
-      },
-      {
-        id: '4',
-        url: '@assets/Screenshot 2025-10-30 170340_1761835060626.png',
-        alt: 'Advanced Reports Center',
-        altAr: 'مركز التقارير المتقدم',
-        type: 'image',
-        caption: 'Advanced reporting with PDF and Excel export',
-        captionAr: 'تقارير متقدمة مع إمكانية التصدير بصيغة PDF و Excel'
-      },
-      {
-        id: '5',
-        url: '@assets/Screenshot 2025-10-30 170410_1761835060625.png',
-        alt: 'Attendance Control Board',
-        altAr: 'لوحة التحكم بالحضور',
-        type: 'image',
-        caption: 'Shift and attendance management interface',
-        captionAr: 'واجهة إدارة الورديات والحضور'
-      },
-      {
-        id: '7',
-        url: '@assets/Screenshot 2025-10-30 170601_1761835060624.png',
-        alt: 'Production Management Dashboard',
-        altAr: 'لوحة إدارة الإنتاج',
-        type: 'image',
-        caption: 'Detailed production management system',
-        captionAr: 'نظام إدارة الإنتاج المفصل'
-      },
-      {
-        id: '8',
-        url: '@assets/Screenshot 2025-10-30 170634_1761835060624.png',
-        alt: 'K9 Training Progress Tracking',
-        altAr: 'تتبع تقدم تدريب الكلاب البوليسية',
-        type: 'image',
-        caption: 'Complete training session tracking and evaluation',
-        captionAr: 'تتبع وتقييم شامل لجلسات التدريب'
-      },
-      {
-        id: '9',
-        url: '@assets/Screenshot 2025-10-30 170746_1761835060624.png',
-        alt: 'Control Panel Settings',
-        altAr: 'إعدادات لوحة التحكم',
-        type: 'image',
-        caption: 'Comprehensive system configuration and settings',
-        captionAr: 'إعدادات وتكوينات شاملة للنظام'
       }
     ],
     summaryEn: 'Integrated software system designed specifically for managing police dog unit operations, training, and field missions with complete digital documentation.',
