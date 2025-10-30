@@ -111,31 +111,77 @@ export default function About() {
               </Link>
             </AnimatedSection>
             <AnimatedSection delay={0.5}>
-              <div className="flex flex-col items-center justify-center space-y-6">
+              <div className="flex flex-col items-center justify-center">
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                  className="flex items-center justify-center"
+                  initial={{ opacity: 0, scale: 0.8, rotateY: -30 }}
+                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  whileHover={{ 
+                    scale: 1.08,
+                    rotateY: 5,
+                    rotateZ: 2,
+                    transition: { duration: 0.4, type: "spring", stiffness: 300 }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ 
+                    duration: 0.8,
+                    type: "spring",
+                    bounce: 0.4
+                  }}
+                  className="relative group"
                 >
-                  <img 
-                    src={logoGSC} 
-                    alt="Genius Software Core Logo" 
-                    className="w-64 h-64 object-contain"
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-blue-500/20 to-purple-500/20 rounded-full blur-3xl group-hover:blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-110"></div>
+                  
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-full animate-pulse"></div>
+                  
+                  <motion.div
+                    animate={{
+                      boxShadow: [
+                        "0 0 20px rgba(59, 130, 246, 0.3)",
+                        "0 0 60px rgba(59, 130, 246, 0.5)",
+                        "0 0 20px rgba(59, 130, 246, 0.3)",
+                      ]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="relative bg-white rounded-full p-8 shadow-2xl"
+                  >
+                    <img 
+                      src={logoGSC} 
+                      alt="Genius Software Core Logo" 
+                      className="w-72 h-72 object-contain drop-shadow-2xl"
+                    />
+                  </motion.div>
+                  
+                  <motion.div
+                    className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-primary to-blue-600 rounded-full opacity-20 blur-xl"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.2, 0.4, 0.2],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  
+                  <motion.div
+                    className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full opacity-20 blur-xl"
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      opacity: [0.2, 0.3, 0.2],
+                    }}
+                    transition={{
+                      duration: 2.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5
+                    }}
                   />
                 </motion.div>
-                <div className="text-center space-y-3">
-                  <h1 className="text-3xl lg:text-4xl font-bold text-secondary">
-                    Genius Software Core
-                  </h1>
-                  <div className="space-y-2">
-                    <p className="text-xl lg:text-2xl font-semibold text-primary">
-                      نبتكر الحلول… ونحقق النمو
-                    </p>
-                    <p className="text-lg lg:text-xl text-gray-600 italic">
-                      We Innovate Solutions… We Drive Growth
-                    </p>
-                  </div>
-                </div>
               </div>
             </AnimatedSection>
           </div>
