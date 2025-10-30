@@ -303,7 +303,7 @@ export default function Services() {
         </section>
 
         {/* Technologies Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gradient-to-br from-white to-brand-sky-light/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center max-w-3xl mx-auto mb-16"
@@ -319,7 +319,7 @@ export default function Services() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                التقنيات التي نستخدمها
+                تقنيات حديثة لحلول متميزة
               </motion.h2>
               <motion.p
                 className="text-lg text-brand-text-muted"
@@ -328,31 +328,30 @@ export default function Services() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                نعمل بأحدث التقنيات والأدوات لضمان تقديم حلول متطورة وموثوقة
+                نستخدم أحدث الأدوات والتقنيات العالمية لبناء منتجات قوية وقابلة للتطوير
               </motion.p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { name: "React", icon: Code, color: "text-blue-500" },
-                { name: "Node.js", icon: Code, color: "text-green-500" },
-                { name: "Python", icon: Code, color: "text-yellow-500" },
-                { name: "Flutter", icon: Smartphone, color: "text-blue-400" },
-                { name: "AWS", icon: Cloud, color: "text-orange-500" },
-                { name: "Docker", icon: Package, color: "text-blue-600" },
-                { name: "MongoDB", icon: Database, color: "text-green-600" },
-                { name: "PostgreSQL", icon: Server, color: "text-blue-700" },
+                { name: "React", icon: Code, color: "text-blue-500", desc: "واجهات تفاعلية" },
+                { name: "Node.js", icon: Code, color: "text-green-500", desc: "خوادم قوية" },
+                { name: "Python", icon: Code, color: "text-yellow-500", desc: "ذكاء اصطناعي" },
+                { name: "Flutter", icon: Smartphone, color: "text-blue-400", desc: "تطبيقات هجينة" },
+                { name: "AWS", icon: Cloud, color: "text-orange-500", desc: "استضافة سحابية" },
+                { name: "Docker", icon: Package, color: "text-blue-600", desc: "نشر سريع" },
+                { name: "MongoDB", icon: Database, color: "text-green-600", desc: "قواعد مرنة" },
+                { name: "PostgreSQL", icon: Server, color: "text-blue-700", desc: "بيانات موثوقة" },
               ].map((tech, index) => (
                 <motion.div
                   key={index}
-                  className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-brand-sky-base hover:border-primary text-center overflow-hidden"
+                  className="group relative bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-500 border border-brand-sky-base/50 hover:border-primary text-center overflow-hidden"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -8 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
                 >
-                  {/* Background Animation */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-primary/5 to-brand-sky-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     initial={false}
@@ -360,30 +359,37 @@ export default function Services() {
 
                   <div className="relative z-10">
                     <motion.div
-                      className="mb-6"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="mb-4"
+                      whileHover={{ scale: 1.15, rotate: 10 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-dark rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow duration-300">
-                        <tech.icon className="w-8 h-8 text-white" />
+                      <div className="w-14 h-14 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center mx-auto group-hover:shadow-xl transition-all duration-300">
+                        <tech.icon className="w-7 h-7 text-white" />
                       </div>
                     </motion.div>
-                    <h3 className="text-lg font-bold text-brand-text-primary group-hover:text-primary transition-colors duration-300 mb-3">
+                    <h3 className="text-base font-bold text-brand-text-primary group-hover:text-primary transition-colors duration-300 mb-2">
                       {tech.name}
                     </h3>
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-xs text-brand-text-muted bg-brand-sky-base px-3 py-1 rounded-full">
-                        أحدث التقنيات
-                      </span>
-                    </div>
+                    <motion.p 
+                      className="text-xs text-brand-text-muted font-medium"
+                      initial={{ opacity: 0.7 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      {tech.desc}
+                    </motion.p>
                   </div>
 
-                  {/* Decorative Elements */}
                   <motion.div
-                    className="absolute top-4 rtl:right-4 ltr:left-4 w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100"
+                    className="absolute top-3 rtl:right-3 ltr:left-3 w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.5 }}
+                  />
+                  <motion.div
+                    className="absolute bottom-3 rtl:left-3 ltr:right-3 w-1.5 h-1.5 bg-brand-sky-accent rounded-full opacity-0 group-hover:opacity-100"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.6 }}
                   />
                 </motion.div>
               ))}
