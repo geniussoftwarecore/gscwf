@@ -30,7 +30,7 @@ const DesktopDetail = lazy(() => import("@/pages/services/desktop"));
 const GraphicsDesignService = lazy(() => import("@/pages/services/GraphicsDesignService"));
 const ERPNextPage = lazy(() => import("@/pages/erpnext"));
 const PortfolioIndex = lazy(() => import("@/pages/portfolio/index"));
-const ProjectDetail = lazy(() => import("@/pages/portfolio/[slug]"));
+const ProjectDetail = lazy(() => import("@/pages/project-detail"));
 const Frameworks = lazy(() => import("@/pages/frameworks"));
 const Contact = lazy(() => import("@/pages/contact"));
 const Dashboard = lazy(() => import("@/pages/dashboard"));
