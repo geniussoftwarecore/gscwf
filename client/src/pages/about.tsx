@@ -111,17 +111,11 @@ export default function About() {
               </Link>
             </AnimatedSection>
             <AnimatedSection delay={0.5}>
-              <motion.div
-                whileHover={{ scale: 1.02, rotateY: 5 }}
-                transition={{ duration: 0.3 }}
-                className="bg-gradient-to-br from-primary/10 to-primary/25 rounded-2xl shadow-2xl p-20 flex items-center justify-center"
-              >
+              <div className="flex flex-col items-center justify-center space-y-6">
                 <motion.div
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    rotate: [0, 5, -5, 0]
-                  }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex items-center justify-center"
                 >
                   <img 
                     src={logoGSC} 
@@ -129,7 +123,20 @@ export default function About() {
                     className="w-64 h-64 object-contain"
                   />
                 </motion.div>
-              </motion.div>
+                <div className="text-center space-y-3">
+                  <h1 className="text-3xl lg:text-4xl font-bold text-secondary">
+                    Genius Software Core
+                  </h1>
+                  <div className="space-y-2">
+                    <p className="text-xl lg:text-2xl font-semibold text-primary">
+                      نبتكر الحلول… ونحقق النمو
+                    </p>
+                    <p className="text-lg lg:text-xl text-gray-600 italic">
+                      We Innovate Solutions… We Drive Growth
+                    </p>
+                  </div>
+                </div>
+              </div>
             </AnimatedSection>
           </div>
         </Container>
