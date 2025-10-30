@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import { Users, User, Palette, Smartphone, TrendingUp, MessageCircle, Eye, Heart, Target, Lightbulb, Shield, Zap } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/i18n/lang";
-import logoGSC from "@assets/logon_1761850202152.jpg";
+import logoGSC from "@assets/logo_1761853687120.webp";
 
 export default function About() {
   const { t } = useTranslation();
@@ -135,13 +135,27 @@ export default function About() {
                   
                   <motion.div
                     className="relative bg-white rounded-full p-6 shadow-2xl overflow-hidden"
+                    whileHover={{ scale: 1.05, rotate: 3 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-blue-500/5"></div>
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-blue-500/5"
+                      animate={{
+                        rotate: [0, 360],
+                      }}
+                      transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }}
+                    ></motion.div>
                     
-                    <img 
+                    <motion.img 
                       src={logoGSC} 
                       alt="Genius Software Core Logo" 
                       className="w-48 h-48 object-contain drop-shadow-2xl relative z-10"
+                      whileHover={{ scale: 1.1, rotate: -3 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
                     />
                   </motion.div>
                 </motion.div>
