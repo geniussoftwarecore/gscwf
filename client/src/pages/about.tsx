@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import { Users, User, Palette, Smartphone, TrendingUp, MessageCircle, Eye, Heart, Target, Lightbulb, Shield, Zap } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/i18n/lang";
-import logoGSC from "@assets/logo_1761847685762.png";
+import logoGSC from "@assets/logon_1761850202152.jpg";
 
 export default function About() {
   const { t } = useTranslation();
@@ -134,9 +134,9 @@ export default function About() {
                   />
                   
                   <motion.div
-                    className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-full p-6 shadow-2xl overflow-hidden"
+                    className="relative bg-white rounded-full p-6 shadow-2xl overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-purple-500/10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-blue-500/5"></div>
                     
                     <img 
                       src={logoGSC} 
