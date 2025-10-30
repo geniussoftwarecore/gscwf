@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import { Users, User, Palette, Smartphone, TrendingUp, MessageCircle, Eye, Heart, Target, Lightbulb, Shield, Zap } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/i18n/lang";
+import logoGSC from "@assets/logo-gsc_1761831441967.png";
 
 export default function About() {
   const { t } = useTranslation();
@@ -121,9 +122,12 @@ export default function About() {
                     rotate: [0, 5, -5, 0]
                   }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="text-primary"
                 >
-                  <Users size={120} />
+                  <img 
+                    src={logoGSC} 
+                    alt="Genius Software Core Logo" 
+                    className="w-64 h-64 object-contain"
+                  />
                 </motion.div>
               </motion.div>
             </AnimatedSection>
