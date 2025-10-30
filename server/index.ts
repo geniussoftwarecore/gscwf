@@ -1,4 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
+import path from "path";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 import { seedDatabase } from "./seed-database";
@@ -8,6 +9,9 @@ import { initializeStorage } from "./storage";
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Serve attached assets (screenshots, uploaded files, etc.)
+app.use('/attached_assets', express.static(path.resolve(process.cwd(), 'attached_assets')));
 
 app.use((req, res, next) => {
   const start = Date.now();

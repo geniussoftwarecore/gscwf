@@ -163,7 +163,7 @@ export const portfolioProjects: PortfolioProject[] = [
       },
       {
         id: '5',
-        url: '@assets/Screenshot 2025-10-30 170410_1761835060626.png',
+        url: '@assets/Screenshot 2025-10-30 170410_1761835060625.png',
         alt: 'Attendance Control Board',
         altAr: 'لوحة التحكم بالحضور',
         type: 'image',

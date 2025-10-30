@@ -155,10 +155,14 @@ export default function ProjectDetail() {
                         className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
                       >
                         <img
-                          src={image.url.startsWith('@assets') ? image.url.replace('@assets', '/attached_assets') : image.url}
+                          src={image.url.replace('@assets/', '/attached_assets/')}
                           alt={isRTL ? image.altAr : image.alt}
                           className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                           data-testid={`img-gallery-${index}`}
+                          onError={(e) => {
+                            console.error('Image failed to load:', image.url);
+                            e.currentTarget.src = 'https://via.placeholder.com/800x600?text=Image+Not+Found';
+                          }}
                         />
                         {(image.caption || image.captionAr) && (
                           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
