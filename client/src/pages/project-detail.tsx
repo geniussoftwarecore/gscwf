@@ -208,6 +208,14 @@ export default function ProjectDetail() {
                         "{isRTL ? project.testimonial.contentAr : project.testimonial.content}"
                       </p>
                       <div className="flex items-center gap-4">
+                        {project.clientLogo && (
+                          <img 
+                            src={project.clientLogo.replace('@assets/', '/attached_assets/')} 
+                            alt={isRTL ? project.clientAr : project.client}
+                            className="w-16 h-16 object-contain"
+                            data-testid="img-client-logo"
+                          />
+                        )}
                         <div className={`flex-1 ${isRTL ? 'text-right' : 'text-left'}`}>
                           <p className="font-bold text-gray-900">
                             {isRTL ? project.testimonial.nameAr : project.testimonial.name}

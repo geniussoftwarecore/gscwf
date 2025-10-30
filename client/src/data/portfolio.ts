@@ -5,6 +5,7 @@ export interface PortfolioProject {
   titleAr: string;
   client: string;
   clientAr: string;
+  clientLogo?: string;
   sector: string;
   sectorAr: string;
   year: number;
@@ -76,6 +77,7 @@ export const portfolioProjects: PortfolioProject[] = [
     titleAr: 'نظام K9 لإدارة الكلاب البوليسية',
     client: 'Bargrain Security Services Company',
     clientAr: 'شركة برجراين للخدمات الأمنية',
+    clientLogo: '@assets/pre_1761856733947.webp',
     sector: 'Security Services',
     sectorAr: 'الخدمات الأمنية',
     year: 2025,
@@ -252,10 +254,10 @@ export const portfolioProjects: PortfolioProject[] = [
       'رؤية أداء الوحدة في الوقت الفعلي'
     ],
     testimonial: {
-      name: 'Colonel Majed Al-Otaibi',
-      nameAr: 'العقيد ماجد العتيبي',
-      position: 'K9 Unit Commander',
-      positionAr: 'قائد وحدة الكلاب البوليسية',
+      name: 'Nabil Al-Siyani',
+      nameAr: 'نبيل السياني',
+      position: 'CEO, Bargrain Security Services',
+      positionAr: 'المدير التنفيذي، برجراين للخدمات الأمنية',
       content: 'The K9 system transformed our unit operations completely. Now we have complete visibility of all training and missions, with instant access to any information we need. The system has significantly improved our efficiency and accountability.',
       contentAr: 'نظام K9 حوّل عمليات وحدتنا بالكامل. الآن لدينا رؤية كاملة لجميع التدريبات والمهام، مع وصول فوري لأي معلومات نحتاجها. النظام حسّن كفاءتنا ومساءلتنا بشكل كبير.',
       rating: 5
