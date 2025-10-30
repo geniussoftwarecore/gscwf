@@ -171,15 +171,6 @@ export const portfolioProjects: PortfolioProject[] = [
         captionAr: 'واجهة إدارة الورديات والحضور'
       },
       {
-        id: '6',
-        url: '@assets/Screenshot 2025-10-30 170549_1761835060625.png',
-        alt: 'Production System Interface',
-        altAr: 'واجهة نظام الإنتاج',
-        type: 'image',
-        caption: 'Production tracking and monitoring',
-        captionAr: 'تتبع ومراقبة الإنتاج'
-      },
-      {
         id: '7',
         url: '@assets/Screenshot 2025-10-30 170601_1761835060624.png',
         alt: 'Production Management Dashboard',
