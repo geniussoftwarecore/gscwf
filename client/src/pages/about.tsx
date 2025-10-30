@@ -168,37 +168,6 @@ export default function About() {
         </Container>
       </Section>
 
-      <Section size="xl" background="white">
-        <Container size="lg">
-          <AnimatedText className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-secondary mb-6">
-              إنجازاتنا بالأرقام
-            </h2>
-          </AnimatedText>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {STATS.map((stat, index) => (
-              <AnimatedCard key={index} delay={index * 0.1} className="text-center p-8" hover={true}>
-                <CardContent className="p-0">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="text-4xl font-bold text-primary mb-4"
-                  >
-                    {stat.value}
-                  </motion.div>
-                  <h3 className="text-lg font-semibold text-secondary mb-2">
-                    {stat.label}
-                  </h3>
-                </CardContent>
-              </AnimatedCard>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
       <Section size="xl" background="light">
         <Container size="lg">
           <AnimatedText className="text-center mb-16">
