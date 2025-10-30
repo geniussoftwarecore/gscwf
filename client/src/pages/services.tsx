@@ -125,9 +125,8 @@ export default function Services() {
           error={error ? String(error) : null}
         />
 
-        {/* Statistics Section */}
-        <section className="py-20 bg-gradient-to-r from-primary to-primary-dark text-white relative overflow-hidden">
-          {/* Background Elements */}
+        {/* Statistics Section - Commented Out */}
+        {/* <section className="py-20 bg-gradient-to-r from-primary to-primary-dark text-white relative overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <motion.div
               className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
@@ -220,7 +219,7 @@ export default function Services() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Process Section */}
         <section className="py-20 bg-gradient-to-br from-brand-sky-light to-white">
