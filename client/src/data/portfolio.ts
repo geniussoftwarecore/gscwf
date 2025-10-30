@@ -180,15 +180,6 @@ export const portfolioProjects: PortfolioProject[] = [
         captionAr: 'تقارير متقدمة مع إمكانية التصدير بصيغة PDF و Excel'
       },
       {
-        id: '8',
-        url: '@assets/8_1761854863056.webp',
-        alt: 'K9 Analytics Center',
-        altAr: 'مركز التحليلات K9',
-        type: 'image',
-        caption: 'Data analytics and insights dashboard',
-        captionAr: 'لوحة تحليل البيانات والرؤى'
-      },
-      {
         id: '9',
         url: '@assets/9_1761854863056.webp',
         alt: 'K9 Control Panel Light Mode',
