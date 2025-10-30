@@ -113,51 +113,78 @@ export default function About() {
             <AnimatedSection delay={0.5}>
               <div className="flex flex-col items-center justify-center space-y-6">
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  className="relative group"
+                  initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    transition: { duration: 0.3, type: "spring", stiffness: 200 }
-                  }}
-                  whileTap={{ scale: 0.98 }}
                   transition={{ 
-                    duration: 0.6,
-                    type: "spring"
+                    duration: 0.8,
+                    type: "spring",
+                    stiffness: 100
                   }}
-                  className="relative group cursor-pointer"
                 >
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-primary/30 to-purple-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-60"
+                    className="absolute -inset-8 bg-gradient-to-r from-primary/20 via-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.3, 0.5, 0.3],
+                    }}
                     transition={{
-                      duration: 0.4
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
                     }}
                   />
                   
                   <motion.div
-                    className="relative bg-white rounded-full p-6 shadow-2xl overflow-hidden"
-                    whileHover={{ scale: 1.05, rotate: 3 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  >
-                    <motion.div 
-                      className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-blue-500/5"
-                      animate={{
-                        rotate: [0, 360],
-                      }}
-                      transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear"
-                      }}
-                    ></motion.div>
-                    
-                    <motion.img 
-                      src={logoGSC} 
-                      alt="Genius Software Core Logo" 
-                      className="w-48 h-48 object-contain drop-shadow-2xl relative z-10"
-                      whileHover={{ scale: 1.1, rotate: -3 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                    />
-                  </motion.div>
+                    className="absolute -inset-4 bg-gradient-to-br from-primary/10 to-blue-500/10 rounded-full blur-2xl"
+                    animate={{
+                      rotate: [0, 360],
+                    }}
+                    transition={{
+                      duration: 15,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                  />
+                  
+                  <motion.img 
+                    src={logoGSC} 
+                    alt="Genius Software Core Logo" 
+                    className="w-64 h-64 object-contain relative z-10 filter drop-shadow-2xl"
+                    whileHover={{ 
+                      scale: 1.15,
+                      rotate: 5,
+                      filter: "drop-shadow(0 25px 50px rgba(25, 194, 240, 0.4))"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ 
+                      type: "spring", 
+                      stiffness: 300, 
+                      damping: 15 
+                    }}
+                    animate={{
+                      y: [0, -10, 0],
+                    }}
+                    style={{
+                      transition: "all 0.3s ease-in-out"
+                    }}
+                  />
+                  
+                  <motion.div
+                    className="absolute inset-0 rounded-full"
+                    animate={{
+                      boxShadow: [
+                        "0 0 20px rgba(25, 194, 240, 0.2)",
+                        "0 0 40px rgba(25, 194, 240, 0.4)",
+                        "0 0 20px rgba(25, 194, 240, 0.2)"
+                      ],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
                 </motion.div>
 
                 <motion.div
