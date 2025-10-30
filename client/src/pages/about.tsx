@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 import { Users, User, Palette, Smartphone, TrendingUp, MessageCircle, Eye, Heart, Target, Lightbulb, Shield, Zap } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/i18n/lang";
-import logoGSC from "@assets/logo-gsc_1761831441967.png";
+import logoGSC from "@assets/logo_1761847685762.png";
 
 export default function About() {
   const { t } = useTranslation();
@@ -111,7 +111,7 @@ export default function About() {
               </Link>
             </AnimatedSection>
             <AnimatedSection delay={0.5}>
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col items-center justify-center space-y-8">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8, rotateY: -30 }}
                   animate={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -146,7 +146,7 @@ export default function About() {
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
-                    className="relative bg-white rounded-full p-8 shadow-2xl"
+                    className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-full p-10 shadow-2xl"
                   >
                     <img 
                       src={logoGSC} 
@@ -181,6 +181,94 @@ export default function About() {
                       delay: 0.5
                     }}
                   />
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  className="text-center space-y-4 max-w-2xl"
+                >
+                  <motion.h1 
+                    className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent"
+                    animate={{
+                      backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                    }}
+                    transition={{
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    style={{
+                      backgroundSize: "200% auto",
+                    }}
+                  >
+                    جينيس سوفت وير كور
+                  </motion.h1>
+                  
+                  <motion.h2 
+                    className="text-2xl lg:text-3xl font-semibold text-secondary"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    Genius Software Core
+                  </motion.h2>
+
+                  <div className="relative py-4">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t-2 border-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+                    </div>
+                    <div className="relative flex justify-center">
+                      <span className="bg-white px-4">
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                          className="w-3 h-3 rounded-full bg-gradient-to-r from-primary to-purple-600"
+                        />
+                      </span>
+                    </div>
+                  </div>
+
+                  <motion.p 
+                    className="text-xl lg:text-2xl font-bold text-primary leading-relaxed"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 1 }}
+                  >
+                    نبتكر الحلول… ونحقق النمو
+                  </motion.p>
+                  
+                  <motion.p 
+                    className="text-lg lg:text-xl text-gray-600 italic font-medium"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 1.2 }}
+                  >
+                    We Innovate Solutions… We Drive Growth
+                  </motion.p>
+
+                  <motion.div
+                    className="flex justify-center gap-2 pt-4"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 1.4 }}
+                  >
+                    {[...Array(3)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="w-2 h-2 rounded-full bg-primary"
+                        animate={{
+                          scale: [1, 1.5, 1],
+                          opacity: [0.5, 1, 0.5],
+                        }}
+                        transition={{
+                          duration: 1.5,
+                          repeat: Infinity,
+                          delay: i * 0.2,
+                        }}
+                      />
+                    ))}
+                  </motion.div>
                 </motion.div>
               </div>
             </AnimatedSection>
