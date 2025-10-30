@@ -171,15 +171,6 @@ export const portfolioProjects: PortfolioProject[] = [
         captionAr: 'لوحة إدارة الحضور والورديات'
       },
       {
-        id: '6',
-        url: '@assets/6_1761854863056.webp',
-        alt: 'K9 Advanced Reports Center',
-        altAr: 'مركز التقارير المتقدم K9',
-        type: 'image',
-        caption: 'Comprehensive reporting and analytics center',
-        captionAr: 'مركز شامل للتقارير والتحليلات'
-      },
-      {
         id: '7',
         url: '@assets/7_1761854863056.webp',
         alt: 'K9 Reports Dashboard',
