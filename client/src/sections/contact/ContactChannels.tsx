@@ -6,12 +6,15 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, MessageCircle, LucideIcon } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/i18n/lang";
+import { COMPANY_INFO } from "@/lib/constants";
 
 interface ContactChannel {
   icon: LucideIcon;
   title: string;
   info: string;
+  info2?: string;
   action: string;
+  action2?: string;
   description: string;
 }
 
@@ -23,28 +26,30 @@ export function ContactChannels() {
     {
       icon: Phone,
       title: dir === 'rtl' ? 'الهاتف' : 'Phone',
-      info: "+967 777 123 456",
-      action: "tel:+967777123456",
-      description: dir === 'rtl' ? 'متاح 24/7 للطوارئ' : 'Available 24/7 for emergencies',
+      info: COMPANY_INFO.phone,
+      info2: COMPANY_INFO.phoneSecondary,
+      action: `tel:${COMPANY_INFO.phoneRaw}`,
+      action2: `tel:${COMPANY_INFO.phoneSecondaryRaw}`,
+      description: dir === 'rtl' ? 'متاح للتواصل المباشر' : 'Available for direct contact',
     },
     {
       icon: Mail,
       title: dir === 'rtl' ? 'البريد الإلكتروني' : 'Email',
-      info: "info@geniuscore.dev",
-      action: "mailto:info@geniuscore.dev",
+      info: COMPANY_INFO.email,
+      action: `mailto:${COMPANY_INFO.email}`,
       description: dir === 'rtl' ? 'نرد خلال 24 ساعة' : 'Response within 24 hours',
     },
     {
       icon: MessageCircle,
       title: dir === 'rtl' ? 'واتساب' : 'WhatsApp',
-      info: "+967 777 123 456",
-      action: "https://wa.me/967777123456",
+      info: COMPANY_INFO.phone,
+      action: COMPANY_INFO.socialMedia.whatsapp,
       description: dir === 'rtl' ? 'تواصل فوري' : 'Instant communication',
     },
     {
       icon: MapPin,
       title: dir === 'rtl' ? 'العنوان' : 'Address',
-      info: dir === 'rtl' ? 'صنعاء، اليمن' : 'Sana\'a, Yemen',
+      info: dir === 'rtl' ? COMPANY_INFO.address : COMPANY_INFO.addressEn,
       action: "#",
       description: dir === 'rtl' ? 'مكتبنا الرئيسي' : 'Our main office',
     },
@@ -69,10 +74,20 @@ export function ContactChannels() {
                 </h3>
                 <a
                   href={info.action}
-                  className="text-primary font-semibold block mb-3 hover:text-primary-dark transition-colors text-lg"
+                  className="text-primary font-semibold block mb-2 hover:text-primary-dark transition-colors text-lg"
+                  data-testid={`link-${info.title.toLowerCase()}`}
                 >
                   {info.info}
                 </a>
+                {info.info2 && info.action2 && (
+                  <a
+                    href={info.action2}
+                    className="text-primary font-semibold block mb-3 hover:text-primary-dark transition-colors text-lg"
+                    data-testid={`link-${info.title.toLowerCase()}-2`}
+                  >
+                    {info.info2}
+                  </a>
+                )}
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {info.description}
                 </p>

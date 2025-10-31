@@ -5,6 +5,7 @@ import { AnimatedCard } from "@/components/ui/AnimatedCard";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
 import { useLanguage } from "@/i18n/lang";
+import { COMPANY_INFO } from "@/lib/constants";
 
 export function ContactMapOrInfo() {
   const { dir } = useLanguage();
@@ -13,25 +14,26 @@ export function ContactMapOrInfo() {
     {
       icon: MapPin,
       title: dir === 'rtl' ? 'موقعنا' : 'Our Location',
-      details: dir === 'rtl' ? 'صنعاء، اليمن' : 'Sana\'a, Yemen',
+      details: dir === 'rtl' ? COMPANY_INFO.address : COMPANY_INFO.addressEn,
       description: dir === 'rtl' ? 'مكتبنا الرئيسي في قلب العاصمة' : 'Our main office in the heart of the capital',
     },
     {
       icon: Clock,
       title: dir === 'rtl' ? 'ساعات العمل' : 'Working Hours',
-      details: dir === 'rtl' ? 'الأحد - الخميس: 8:00 ص - 6:00 م' : 'Sunday - Thursday: 8:00 AM - 6:00 PM',
+      details: dir === 'rtl' ? COMPANY_INFO.workingHours : COMPANY_INFO.workingHoursEn,
       description: dir === 'rtl' ? 'متاحون للطوارئ خارج أوقات العمل' : 'Available for emergencies outside working hours',
     },
     {
       icon: Phone,
       title: dir === 'rtl' ? 'تواصل سريع' : 'Quick Contact',
-      details: "+967 777 123 456",
+      details: COMPANY_INFO.phone,
+      details2: COMPANY_INFO.phoneSecondary,
       description: dir === 'rtl' ? 'اتصال مباشر أو رسائل واتساب' : 'Direct call or WhatsApp messages',
     },
     {
       icon: Mail,
       title: dir === 'rtl' ? 'استفسارات العمل' : 'Business Inquiries',
-      details: "info@geniuscore.dev",
+      details: COMPANY_INFO.email,
       description: dir === 'rtl' ? 'للاستفسارات والمشاريع الجديدة' : 'For inquiries and new projects',
     },
   ];
@@ -72,6 +74,11 @@ export function ContactMapOrInfo() {
                           <p className="text-primary font-semibold text-sm mb-1">
                             {info.details}
                           </p>
+                          {(info as any).details2 && (
+                            <p className="text-primary font-semibold text-sm mb-1">
+                              {(info as any).details2}
+                            </p>
+                          )}
                           <p className="text-gray-600 text-xs leading-relaxed">
                             {info.description}
                           </p>

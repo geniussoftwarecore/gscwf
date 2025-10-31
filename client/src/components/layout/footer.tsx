@@ -153,22 +153,36 @@ export default function Footer() {
             {/* Contact Information */}
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-gray-500" />
+                <Mail className="w-4 h-4 text-gray-500 flex-shrink-0" />
                 <a 
                   href={`mailto:${COMPANY_INFO.email}`}
                   className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                  data-testid="footer-email"
                 >
                   {COMPANY_INFO.email}
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-gray-500" />
-                <a 
-                  href={`tel:${COMPANY_INFO.phone}`}
-                  className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  {COMPANY_INFO.phone}
-                </a>
+                <Phone className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                <div className="flex flex-col gap-1">
+                  <a 
+                    href={`tel:${COMPANY_INFO.phoneRaw}`}
+                    className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                    data-testid="footer-phone-1"
+                  >
+                    {COMPANY_INFO.phone}
+                  </a>
+                  <a 
+                    href={`tel:${COMPANY_INFO.phoneSecondaryRaw}`}
+                    className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                    data-testid="footer-phone-2"
+                  >
+                    {COMPANY_INFO.phoneSecondary}
+                  </a>
+                </div>
+              </div>
+              <div className="text-xs text-gray-500 pt-2">
+                {lang === 'ar' ? 'السجل التجاري' : 'Company ID'}: {COMPANY_INFO.companyId}
               </div>
             </div>
 
