@@ -56,11 +56,12 @@ export default function ProjectDetail() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
+                className="flex justify-center"
               >
                 <img
                   src={project.coverImage.startsWith('@assets') ? project.coverImage.replace('@assets', '/attached_assets') : project.coverImage}
                   alt={isRTL ? project.titleAr : project.title}
-                  className="w-full rounded-2xl shadow-2xl"
+                  className="max-w-md w-full rounded-2xl shadow-2xl"
                   data-testid="img-project-cover"
                 />
               </motion.div>
@@ -145,7 +146,7 @@ export default function ProjectDetail() {
                   <h2 className={`text-3xl font-bold mb-6 ${isRTL ? 'text-right' : 'text-left'}`}>
                     {isRTL ? 'معرض الصور' : 'Gallery'}
                   </h2>
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {project.gallery.map((image, index) => (
                       <motion.div
                         key={image.id}
@@ -157,7 +158,7 @@ export default function ProjectDetail() {
                         <img
                           src={image.url.replace('@assets/', '/attached_assets/')}
                           alt={isRTL ? image.altAr : image.alt}
-                          className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                           data-testid={`img-gallery-${index}`}
                           onError={(e) => {
                             console.error('Image failed to load:', image.url);
