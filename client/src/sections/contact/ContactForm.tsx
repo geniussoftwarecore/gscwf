@@ -27,6 +27,8 @@ const contactSchema = z.object({
   selectedApp: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
   budget: z.string().optional(),
+  customBudget: z.string().optional(),
+  currency: z.string().optional(),
   timeline: z.string().optional(),
 });
 
@@ -40,6 +42,8 @@ export function ContactForm() {
   const [selectedServiceApplication, setSelectedServiceApplication] = useState<string>("");
   const [selectedApp, setSelectedApp] = useState<string>("");
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [selectedBudget, setSelectedBudget] = useState<string>("");
+  const [selectedCurrency, setSelectedCurrency] = useState<string>("");
   const { toast } = useToast();
 
   const {
@@ -254,11 +258,21 @@ export function ContactForm() {
   ];
   
   const budgetRanges = [
-    dir === 'rtl' ? "أقل من 10,000 ر.ي" : "Less than $2,500",
-    dir === 'rtl' ? "10,000 - 50,000 ر.ي" : "$2,500 - $12,500",
-    dir === 'rtl' ? "50,000 - 100,000 ر.ي" : "$12,500 - $25,000", 
-    dir === 'rtl' ? "100,000 - 500,000 ر.ي" : "$25,000 - $125,000",
-    dir === 'rtl' ? "أكثر من 500,000 ر.ي" : "More than $125,000",
+    dir === 'rtl' ? "1,000 - 5,000" : "1,000 - 5,000",
+    dir === 'rtl' ? "5,000 - 10,000" : "5,000 - 10,000",
+    dir === 'rtl' ? "10,000 - 20,000" : "10,000 - 20,000",
+    dir === 'rtl' ? "20,000 - 50,000" : "20,000 - 50,000",
+    dir === 'rtl' ? "50,000 - 100,000" : "50,000 - 100,000",
+    dir === 'rtl' ? "أكثر من 100,000" : "More than 100,000",
+    dir === 'rtl' ? "أدخل المبلغ يدوياً" : "Enter Custom Amount",
+  ];
+  
+  const currencies = [
+    { value: "YER", label: dir === 'rtl' ? "ريال يمني (ر.ي)" : "Yemeni Rial (YER)" },
+    { value: "SAR", label: dir === 'rtl' ? "ريال سعودي (ر.س)" : "Saudi Riyal (SAR)" },
+    { value: "USD", label: dir === 'rtl' ? "دولار أمريكي ($)" : "US Dollar ($)" },
+    { value: "EUR", label: dir === 'rtl' ? "يورو (€)" : "Euro (€)" },
+    { value: "GBP", label: dir === 'rtl' ? "جنيه إسترليني (£)" : "British Pound (£)" },
   ];
   
   const timelineOptions = [
@@ -531,8 +545,11 @@ export function ContactForm() {
                     <Label htmlFor="budget" className="text-sm font-semibold text-gray-700 mb-2 block">
                       {t('contact.form.budget')}
                     </Label>
-                    <Select onValueChange={(value) => setValue("budget", value)}>
-                      <SelectTrigger className="h-12 text-base border-2 focus:border-primary rounded-xl">
+                    <Select onValueChange={(value) => {
+                      setValue("budget", value);
+                      setSelectedBudget(value);
+                    }}>
+                      <SelectTrigger className="h-12 text-base border-2 focus:border-primary rounded-xl" data-testid="select-budget">
                         <SelectValue placeholder={t('contact.form.budget')} />
                       </SelectTrigger>
                       <SelectContent>
@@ -546,22 +563,63 @@ export function ContactForm() {
                   </div>
                   
                   <div>
-                    <Label htmlFor="timeline" className="text-sm font-semibold text-gray-700 mb-2 block">
-                      {t('contact.form.timeline')}
+                    <Label htmlFor="currency" className="text-sm font-semibold text-gray-700 mb-2 block">
+                      {dir === 'rtl' ? 'العملة' : 'Currency'}
                     </Label>
-                    <Select onValueChange={(value) => setValue("timeline", value)}>
-                      <SelectTrigger className="h-12 text-base border-2 focus:border-primary rounded-xl">
-                        <SelectValue placeholder={t('contact.form.timeline')} />
+                    <Select onValueChange={(value) => {
+                      setValue("currency", value);
+                      setSelectedCurrency(value);
+                    }}>
+                      <SelectTrigger className="h-12 text-base border-2 focus:border-primary rounded-xl" data-testid="select-currency">
+                        <SelectValue placeholder={dir === 'rtl' ? 'اختر العملة' : 'Select Currency'} />
                       </SelectTrigger>
                       <SelectContent>
-                        {timelineOptions.map((timeline) => (
-                          <SelectItem key={timeline} value={timeline}>
-                            {timeline}
+                        {currencies.map((currency) => (
+                          <SelectItem key={currency.value} value={currency.value}>
+                            {currency.label}
                           </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
                   </div>
+                </div>
+
+                {/* Custom Budget Input - appears when "أدخل المبلغ يدوياً" is selected */}
+                {(selectedBudget === "أدخل المبلغ يدوياً" || selectedBudget === "Enter Custom Amount") && (
+                  <div>
+                    <Label htmlFor="customBudget" className="text-sm font-semibold text-gray-700 mb-2 block">
+                      {dir === 'rtl' ? 'أدخل المبلغ المتوقع' : 'Enter Expected Budget Amount'}
+                    </Label>
+                    <Input
+                      id="customBudget"
+                      {...register("customBudget")}
+                      type="number"
+                      placeholder={dir === 'rtl' ? "مثال: 25000" : "Example: 25000"}
+                      className="h-12 text-base border-2 focus:border-primary rounded-xl"
+                      data-testid="input-custom-budget"
+                    />
+                    <p className="text-sm text-gray-600 mt-1">
+                      {dir === 'rtl' ? 'أدخل المبلغ المتوقع للمشروع' : 'Enter the expected budget amount for your project'}
+                    </p>
+                  </div>
+                )}
+
+                <div>
+                  <Label htmlFor="timeline" className="text-sm font-semibold text-gray-700 mb-2 block">
+                    {t('contact.form.timeline')}
+                  </Label>
+                  <Select onValueChange={(value) => setValue("timeline", value)}>
+                    <SelectTrigger className="h-12 text-base border-2 focus:border-primary rounded-xl" data-testid="select-timeline">
+                      <SelectValue placeholder={t('contact.form.timeline')} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {timelineOptions.map((timeline) => (
+                        <SelectItem key={timeline} value={timeline}>
+                          {timeline}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div>
