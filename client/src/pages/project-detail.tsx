@@ -146,7 +146,7 @@ export default function ProjectDetail() {
                   <h2 className={`text-3xl font-bold mb-6 ${isRTL ? 'text-right' : 'text-left'}`}>
                     {isRTL ? 'معرض الصور' : 'Gallery'}
                   </h2>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                     {project.gallery.map((image, index) => (
                       <motion.div
                         key={image.id}
@@ -154,11 +154,12 @@ export default function ProjectDetail() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                         className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                        style={{ aspectRatio: '9/16' }}
                       >
                         <img
                           src={image.url.replace('@assets/', '/attached_assets/')}
                           alt={isRTL ? image.altAr : image.alt}
-                          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                           data-testid={`img-gallery-${index}`}
                           onError={(e) => {
                             console.error('Image failed to load:', image.url);
@@ -166,8 +167,8 @@ export default function ProjectDetail() {
                           }}
                         />
                         {(image.caption || image.captionAr) && (
-                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <p className="text-sm">{isRTL ? image.captionAr : image.caption}</p>
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p className="text-xs leading-tight">{isRTL ? image.captionAr : image.caption}</p>
                           </div>
                         )}
                       </motion.div>
