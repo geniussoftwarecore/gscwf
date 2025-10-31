@@ -123,7 +123,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <Link href="/erpnext">
+              <Link href="/services/be5527f7-3381-48f8-9ff2-21132038ae59#erpnext-lead-form">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-base font-semibold w-full sm:w-auto"
