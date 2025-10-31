@@ -179,10 +179,14 @@ export default function Footer() {
                   >
                     {COMPANY_INFO.phoneSecondary}
                   </a>
+                  <a 
+                    href={`tel:${COMPANY_INFO.phoneThirdRaw}`}
+                    className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                    data-testid="footer-phone-3"
+                  >
+                    {COMPANY_INFO.phoneThird}
+                  </a>
                 </div>
-              </div>
-              <div className="text-xs text-gray-500 pt-2">
-                {lang === 'ar' ? 'السجل التجاري' : 'Company ID'}: {COMPANY_INFO.companyId}
               </div>
             </div>
 

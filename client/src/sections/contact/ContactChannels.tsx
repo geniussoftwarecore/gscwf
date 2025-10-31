@@ -28,10 +28,12 @@ export function ContactChannels() {
       title: dir === 'rtl' ? 'الهاتف' : 'Phone',
       info: COMPANY_INFO.phone,
       info2: COMPANY_INFO.phoneSecondary,
+      info3: COMPANY_INFO.phoneThird,
       action: `tel:${COMPANY_INFO.phoneRaw}`,
       action2: `tel:${COMPANY_INFO.phoneSecondaryRaw}`,
+      action3: `tel:${COMPANY_INFO.phoneThirdRaw}`,
       description: dir === 'rtl' ? 'متاح للتواصل المباشر' : 'Available for direct contact',
-    },
+    } as any,
     {
       icon: Mail,
       title: dir === 'rtl' ? 'البريد الإلكتروني' : 'Email',
@@ -82,10 +84,19 @@ export function ContactChannels() {
                 {info.info2 && info.action2 && (
                   <a
                     href={info.action2}
-                    className="text-primary font-semibold block mb-3 hover:text-primary-dark transition-colors text-lg"
+                    className="text-primary font-semibold block mb-2 hover:text-primary-dark transition-colors text-lg"
                     data-testid={`link-${info.title.toLowerCase()}-2`}
                   >
                     {info.info2}
+                  </a>
+                )}
+                {(info as any).info3 && (info as any).action3 && (
+                  <a
+                    href={(info as any).action3}
+                    className="text-primary font-semibold block mb-3 hover:text-primary-dark transition-colors text-lg"
+                    data-testid={`link-${info.title.toLowerCase()}-3`}
+                  >
+                    {(info as any).info3}
                   </a>
                 )}
                 <p className="text-gray-600 text-sm leading-relaxed">

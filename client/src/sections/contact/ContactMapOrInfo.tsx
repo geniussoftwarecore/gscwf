@@ -28,8 +28,9 @@ export function ContactMapOrInfo() {
       title: dir === 'rtl' ? 'تواصل سريع' : 'Quick Contact',
       details: COMPANY_INFO.phone,
       details2: COMPANY_INFO.phoneSecondary,
+      details3: COMPANY_INFO.phoneThird,
       description: dir === 'rtl' ? 'اتصال مباشر أو رسائل واتساب' : 'Direct call or WhatsApp messages',
-    },
+    } as any,
     {
       icon: Mail,
       title: dir === 'rtl' ? 'استفسارات العمل' : 'Business Inquiries',
@@ -77,6 +78,11 @@ export function ContactMapOrInfo() {
                           {(info as any).details2 && (
                             <p className="text-primary font-semibold text-sm mb-1">
                               {(info as any).details2}
+                            </p>
+                          )}
+                          {(info as any).details3 && (
+                            <p className="text-primary font-semibold text-sm mb-1">
+                              {(info as any).details3}
                             </p>
                           )}
                           <p className="text-gray-600 text-xs leading-relaxed">
