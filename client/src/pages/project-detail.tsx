@@ -61,7 +61,7 @@ export default function ProjectDetail() {
                 <img
                   src={project.coverImage.startsWith('@assets') ? project.coverImage.replace('@assets', '/attached_assets') : project.coverImage}
                   alt={isRTL ? project.titleAr : project.title}
-                  className="max-w-md w-full rounded-2xl shadow-2xl"
+                  className={project.slug === 'k9-police-dog-management-system' ? "w-full rounded-2xl shadow-2xl" : "max-w-md w-full rounded-2xl shadow-2xl"}
                   data-testid="img-project-cover"
                 />
               </motion.div>
@@ -146,7 +146,7 @@ export default function ProjectDetail() {
                   <h2 className={`text-3xl font-bold mb-6 ${isRTL ? 'text-right' : 'text-left'}`}>
                     {isRTL ? 'معرض الصور' : 'Gallery'}
                   </h2>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                  <div className={project.slug === 'k9-police-dog-management-system' ? "grid grid-cols-1 md:grid-cols-2 gap-6" : "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3"}>
                     {project.gallery.map((image, index) => (
                       <motion.div
                         key={image.id}
@@ -154,7 +154,7 @@ export default function ProjectDetail() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                         className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
-                        style={{ aspectRatio: '9/16' }}
+                        style={project.slug === 'k9-police-dog-management-system' ? { aspectRatio: '16/9' } : { aspectRatio: '9/16' }}
                       >
                         <img
                           src={image.url.replace('@assets/', '/attached_assets/')}
