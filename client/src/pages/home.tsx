@@ -4,7 +4,7 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { SEOHead } from "@/components/SEOHead";
 import {
   Hero,
-  ProblemSolution,
+  ApplicationsShowcase,
   ServicesGrid,
   CRMShowcase,
   PortfolioPreview,
@@ -34,8 +34,8 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
         
-        {/* Problem Solution Section */}
-        <ProblemSolution />
+        {/* Applications Showcase Section */}
+        <ApplicationsShowcase />
         
         {/* Services Grid */}
         <ServicesGrid />
