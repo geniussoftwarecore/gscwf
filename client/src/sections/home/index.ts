@@ -1,6 +1,5 @@
 // Export all home page components
 export { Hero } from './Hero';
-export { StatsSection } from './StatsSection';
 export { WhyChooseUs } from './WhyChooseUs';
 export { HowWeWork } from './HowWeWork';
 export { ServicesGrid } from './ServicesGrid';

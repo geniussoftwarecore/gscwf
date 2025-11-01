@@ -4,7 +4,6 @@ import { useTranslation } from "@/hooks/useTranslation";
 import { SEOHead } from "@/components/SEOHead";
 import {
   Hero,
-  StatsSection,
   WhyChooseUs,
   HowWeWork,
   ServicesGrid,
@@ -35,9 +34,6 @@ export default function Home() {
       >
         {/* Hero Section */}
         <Hero />
-        
-        {/* Statistics Section */}
-        <StatsSection />
         
         {/* Why Choose Us Section */}
         <WhyChooseUs />
