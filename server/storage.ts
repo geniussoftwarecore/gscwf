@@ -1183,7 +1183,9 @@ export class MemStorage implements IStorage {
       id,
       projectUrl: item.projectUrl || null,
       technologies: item.technologies || null,
-      featured: item.featured || null
+      featured: item.featured || null,
+      createdAt: new Date(),
+      updatedAt: new Date()
     };
     this.portfolioItems.set(id, portfolioItem);
     return portfolioItem;
@@ -1195,15 +1197,6 @@ export class MemStorage implements IStorage {
 
   async getServiceById(id: string): Promise<Service | undefined> {
     return this.services.get(id);
-  }
-
-  // Portfolio Management
-  async getAllPortfolioItems(): Promise<PortfolioItem[]> {
-    return Array.from(this.portfolioItems.values());
-  }
-
-  async getPortfolioItemsByCategory(category: string): Promise<PortfolioItem[]> {
-    return Array.from(this.portfolioItems.values()).filter(item => item.category === category);
   }
 
   // Subscription Plans
