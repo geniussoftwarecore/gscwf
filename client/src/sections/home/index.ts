@@ -1,6 +1,8 @@
 // Export all home page components
 export { Hero } from './Hero';
-export { ApplicationsShowcase } from './ApplicationsShowcase';
+export { StatsSection } from './StatsSection';
+export { WhyChooseUs } from './WhyChooseUs';
+export { HowWeWork } from './HowWeWork';
 export { ServicesGrid } from './ServicesGrid';
 export { CRMShowcase } from './CRMShowcase';
 export { PortfolioPreview } from './PortfolioPreview';
