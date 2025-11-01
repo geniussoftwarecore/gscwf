@@ -993,15 +993,15 @@ export const webOrders = pgTable("web_orders", {
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
 }, (table) => ({
   // Indexes for performance
-  statusIdx: index("web_orders_status_idx").on(table.status),
-  siteTypeIdx: index("web_orders_site_type_idx").on(table.siteType),
-  customerEmailIdx: index("web_orders_customer_email_idx").on(table.customerEmail),
-  createdAtIdx: index("web_orders_created_at_idx").on(table.createdAt),
-  assigneeIdx: index("web_orders_assignee_idx").on(table.assignee),
+  statusIdx: index("web_orders_wizard_status_idx").on(table.status),
+  siteTypeIdx: index("web_orders_wizard_site_type_idx").on(table.siteType),
+  customerEmailIdx: index("web_orders_wizard_customer_email_idx").on(table.customerEmail),
+  createdAtIdx: index("web_orders_wizard_created_at_idx").on(table.createdAt),
+  assigneeIdx: index("web_orders_wizard_assignee_idx").on(table.assignee),
   
   // Composite indexes for common queries
-  statusCreatedIdx: index("web_orders_status_created_idx").on(table.status, table.createdAt),
-  siteTypeStatusIdx: index("web_orders_site_type_status_idx").on(table.siteType, table.status),
+  statusCreatedIdx: index("web_orders_wizard_status_created_idx").on(table.status, table.createdAt),
+  siteTypeStatusIdx: index("web_orders_wizard_site_type_status_idx").on(table.siteType, table.status),
 }));
 
 // Insert Schema for Web Orders
